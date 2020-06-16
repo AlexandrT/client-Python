@@ -167,7 +167,7 @@ class ReportPortalService(object):
                  endpoint,
                  project,
                  token,
-                 log_batch_size=20,
+                 log_batch_size=50,
                  is_skipped_an_issue=True,
                  verify_ssl=True,
                  retries=None,
@@ -192,7 +192,7 @@ class ReportPortalService(object):
         self.is_skipped_an_issue = is_skipped_an_issue
         self.base_url_v1 = uri_join(self.endpoint, "api/v1", self.project)
         self.base_url_v2 = uri_join(self.endpoint, "api/v2", self.project)
-        self.max_pool_size = 50
+        self.max_pool_size = 300
 
         self.session = requests.Session()
         if retries:
